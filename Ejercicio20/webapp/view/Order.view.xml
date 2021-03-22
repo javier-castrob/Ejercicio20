@@ -1,0 +1,70 @@
+<mvc:View controllerName="Ejercicio20.Ejercicio20.controller.Order" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onBack">
+        <headerContent>
+			<Button icon="sap-icon://customer-order-entry" />
+		</headerContent>
+        <content>
+        	<IconTabBar
+                id="idIconTabBarMulti"
+                class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://customer" key="info">
+                        <f:SimpleForm title="{i18n>titleOrder} {Order>/OrderID}">
+                            <f:content>
+                                <Label text="{i18n>customerID}"/>
+                                <Text text="{Order>/CustomerID}" />
+                                <Label text="{i18n>employeeID}"/>
+                                <Text text="{Order>/EmployeeID}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://date-time"
+                        key="attachments"
+                        >
+                        <f:SimpleForm title="{i18n>titleOrder} {Order>/OrderID}">
+                            <f:content>
+                                <Label text="{i18n>orderDate}"/>
+                                <Text text="{ path: 'Order>/OrderDate', formatter: '.Formatter.formatDate'}" />
+                                <Label text="{i18n>requiredDate}"/>
+                                <Text text="{ path: 'Order>/RequiredDate', formatter: '.Formatter.formatDate'}" />
+                                <Label text="{i18n>shippedDate}"/>
+                                <Text text="{ path: 'Order>/ShippedDate', formatter: '.Formatter.formatDate'}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        icon="sap-icon://shipping-status"
+                        key="notes"
+                        >
+                        <f:SimpleForm title="{i18n>titleOrder} {Order>/OrderID}">
+                            <f:content>
+                                <Label text="{i18n>shipVia}"/>
+                                <Text text="{Order>/ShipVia}" />
+                                <Label text="{i18n>freight}"/>
+                                <Text text="${Order>/Freight}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://message-information" key="people">
+                        <f:SimpleForm title="{i18n>titleOrder} {Order>/OrderID}">
+                            <f:content>
+                                <Label text="{i18n>shipName}"/>
+                                <Text text="{Order>/ShipName}" />
+                                <Label text="{i18n>shipAddress}"/>
+                                <Text text="{Order>/ShipAddress}" />
+                                <Label text="{i18n>shipCity}"/>
+                                <Text text="{Order>/ShipCity}" />
+                                <Label text="{i18n>shipPostalCode}"/>
+                                <Text text="{Order>/ShipPostalCode}" />
+                                <Label text="{i18n>shipCountry}"/>
+                                <Text text="{Order>/ShipCountry}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+             
+        </content>
+    </Page>
+</mvc:View>

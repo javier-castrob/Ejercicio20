@@ -1,0 +1,45 @@
+<mvc:View controllerName="Ejercicio20.Ejercicio20.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+		    <Switch state="true" customTextOn="ES" customTextOff="EN" change="cambiarIdioma"/>
+		</headerContent>
+        <content>
+            <Table id="idTableOrderDetails" items="{OrderDetails>/value}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="{i18n>tablaTitulo}"/>
+                    	<ToolbarSpacer/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                        <Text text="{i18n>orderID}" />
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>productID}" />
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>unitPrice}" />
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>quantity}" />
+                    </Column>
+                    <Column >
+                        <Text text="{i18n>discount}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" press="onPress">
+                        <cells>
+                            <Text text="{OrderDetails>OrderID}"/>
+                            <Text text="{OrderDetails>ProductID}"/>
+                            <Text text="${OrderDetails>UnitPrice}"/>
+                            <Text text="{OrderDetails>Quantity}"/>
+                            <Text text="{OrderDetails>Discount}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
