@@ -35,7 +35,7 @@
                             <Text text="{OrderDetails>ProductID}"/>
                             <Text text="${OrderDetails>UnitPrice}"/>
                             <Text text="{OrderDetails>Quantity}"/>
-                            <Text text="{OrderDetails>Discount}"/>
+                            <Text text="{OrderDetails>Discount}%"/>
                         </cells>
                     </ColumnListItem>
                 </items>
